@@ -6,6 +6,8 @@ This is helpful for tutorial videos where you want to display which commands you
 
 ![keypress-overlay](https://i.imgur.com/WQdnFNb.gif)
 
+Keypresses will only show if pressing a command(ctrl or shift or alt) or are whitelisted on `keycodes.whitelist.json` files.
+
 You can customize how they are shown on `index.html`'s css, and also modify command names on `keycodes.US.json`.
 
 Any bugs and new ideas are welcome on [Issues](https://github.com/AssisrMatheus/keypress-overlay/issues). And you're welcome to send pull-requests.
