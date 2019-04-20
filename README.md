@@ -40,7 +40,7 @@ Any bugs and new ideas are welcome on [Issues](https://github.com/AssisrMatheus/
 
 - Click "OK"
 
-> I also recommend checking "Refresh browser when scene becomes active" and "Shitdown source when not visible" at the bottom.
+> I also recommend checking "Refresh browser when scene becomes active" and "Shutdown source when not visible" at the bottom.
 
 ![obs-tutorial](https://i.imgur.com/RNdIbaK.gif)
 
