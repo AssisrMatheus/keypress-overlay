@@ -1,0 +1,20 @@
+{
+  "name": "keypress-overlay",
+  "version": "1.0.0",
+  "description": "Display an overlay of your current keypresses",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-display": "node index.js --display",
+    "start-debug": "node index.js --debug"
+  },
+  "author": "Matheus Assis Rios",
+  "license": "ISC",
+  "dependencies": {
+    "iohook": "^0.4.4",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/socket.io": "^2.1.2"
+  }
+}

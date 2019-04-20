@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .keyWrapper {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .key {
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 20px;
+        padding: 20px;
+        margin-bottom: 10px;
+        display: inline-block;
+        animation: hide 300ms linear 1000ms;
+        animation-fill-mode: both;
+      }
+
+      @keyframes hide {
+        0% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.js"></script>
+    <script>
+      var socket = io("http://localhost");
+      var root = document.getElementById("root");
+
+      socket.on("keydown", function(data) {
+        const keyWrapper = document.createElement("div");
+        keyWrapper.className = "keyWrapper";
+
+        const key = document.createElement("div");
+
+        keyWrapper.prepend(key);
+
+        key.className = "key";
+        key.id = Date.now();
+        key.innerText = data;
+
+        setTimeout(() => {
+          key.remove();
+        }, 2000);
+
+        root.prepend(keyWrapper);
+      });
+    </script>
+  </body>
+</html>
