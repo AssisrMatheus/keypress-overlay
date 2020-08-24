@@ -43,12 +43,12 @@
   </head>
   <body>
     <div id="root"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js"></script>
     <script>
       var socket = io("http://localhost");
       var root = document.getElementById("root");
 
-      socket.on("keydown", function(data) {
+      socket.on("keydown", function (data) {
         const keyWrapper = document.createElement("div");
         keyWrapper.className = "keyWrapper";
 

@@ -11,10 +11,10 @@
   "author": "Matheus Assis Rios",
   "license": "ISC",
   "dependencies": {
-    "iohook": "^0.4.4",
-    "socket.io": "^2.2.0"
+    "iohook": "^0.6.6",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
-    "@types/socket.io": "^2.1.2"
+    "@types/socket.io": "^2.1.11"
   }
 }
