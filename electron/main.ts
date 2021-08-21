@@ -1,33 +1,28 @@
-import { app, BrowserWindow, screen } from 'electron';
+import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
+import { GlobalKeyboardListener } from 'node-global-key-listener';
 
 // import menuTemplate from './menu';
 
 let mainWindow: BrowserWindow | null;
 
-function createWindow() {
-  const displays = screen.getAllDisplays();
-  const externalDisplay = displays.find((display) => {
-    return display.bounds.x !== 0 || display.bounds.y !== 0;
-  });
+const createWindow = () => {
+  // const displays = screen.getAllDisplays();
+  // const externalDisplay = displays.find((display) => {
+  //   return display.bounds.x !== 0 || display.bounds.y !== 0;
+  // });
 
-  let mainWindow;
-  if (externalDisplay) {
-    mainWindow = new BrowserWindow({
-      width: 1280,
-      height: 1024,
-      x: externalDisplay.bounds.x + 50,
-      y: externalDisplay.bounds.y + 50
-    });
-  } else {
-    mainWindow = new BrowserWindow({
-      width: 1280,
-      height: 1024,
-      x: 50,
-      y: 50
-    });
-  }
+  mainWindow = new BrowserWindow({
+    width: 1280,
+    height: 1024,
+    webPreferences: {
+      nodeIntegration: false, // is default value after Electron v5
+      contextIsolation: true, // protect against prototype pollution
+      enableRemoteModule: false, // turn off remote
+      preload: path.join(__dirname, 'preload.js') // use a preload script
+    }
+  });
 
   // const menu = Menu.buildFromTemplate(menuTemplate);
   // Menu.setApplicationMenu(menu);
@@ -44,7 +39,15 @@ function createWindow() {
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
-}
+
+  mainWindow.webContents.on('did-finish-load', () => {
+    const keyboardListener = new GlobalKeyboardListener();
+
+    keyboardListener.addListener((e, down) => {
+      mainWindow?.webContents.send('fromMain', JSON.stringify({ e, down }));
+    });
+  });
+};
 
 app.on('ready', createWindow);
 

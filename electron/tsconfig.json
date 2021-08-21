@@ -4,7 +4,15 @@
     "noImplicitAny": true,
     "sourceMap": true,
     "outDir": "../build/electron",
-    "baseUrl": "."
+    "baseUrl": ".",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "suppressImplicitAnyIndexErrors": true
   },
   "include": [".", "../src/types"],
   "exclude": ["node_modules"]
