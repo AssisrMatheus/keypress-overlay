@@ -2,9 +2,6 @@
   "8": "Backspace",
   "9": "Tab ↹",
   "13": "↵ Enter",
-  "16": "⇧ Shift",
-  "17": "Ctrl",
-  "18": "Alt",
   "19": "Pause Break",
   "20": "⇪ Caps Lock",
   "27": "Esc",
@@ -38,11 +35,5 @@
   "122": "F11",
   "123": "F12",
   "144": "Num Lock",
-  "145": "Scroll Lock",
-  "160": "⇧ Shift",
-  "161": "Shift ⇧",
-  "162": "Ctrl",
-  "163": "Ctrl",
-  "164": "Alt",
-  "165": "Alt Gr"
+  "145": "Scroll Lock"
 }

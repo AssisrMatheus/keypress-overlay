@@ -46,6 +46,4 @@ Any bugs and new ideas are welcome on [Issues](https://github.com/AssisrMatheus/
 
 ## Dependencies
 
-The project uses [iohook](https://wilix-team.github.io/iohook/) and [socket.io](https://socket.io/) and should work with any OS, Mac, Linux or Windows.
-
-[iohook OS Support page](https://wilix-team.github.io/iohook/os-support.html)
+The project uses [node-global-key-listener](https://github.com/LaunchMenu/node-global-key-listener) and [socket.io](https://socket.io/) and should work with any OS, Mac, Linux or Windows.
