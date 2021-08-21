@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="533752f7-5547-4194-a1f6-9a49786df147" name="Changes" comment="added message exchange">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+    <list default="true" id="533752f7-5547-4194-a1f6-9a49786df147" name="Changes" comment="finished refactor">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +65,7 @@
       <workItem from="1629547261119" duration="4615000" />
       <workItem from="1629552093367" duration="4949000" />
       <workItem from="1629557093038" duration="6363000" />
-      <workItem from="1629564491155" duration="7845000" />
+      <workItem from="1629564491155" duration="7972000" />
     </task>
     <task id="LOCAL-00001" summary="added nwjs">
       <created>1629552998451</created>
@@ -111,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629571139435</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="finished refactor">
+      <created>1629572443423</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1629572443423</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +142,8 @@
     <MESSAGE value="added electron" />
     <MESSAGE value="added dist and linter scripts" />
     <MESSAGE value="added message exchange" />
-    <option name="LAST_COMMIT_MESSAGE" value="added message exchange" />
+    <MESSAGE value="finished refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished refactor" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
