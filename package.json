@@ -2,25 +2,17 @@
   "name": "keypress-overlay",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "@types/jest": "^26.0.24",
-    "@types/node": "^12.20.20",
-    "@types/react": "^17.0.19",
-    "@types/react-dom": "^17.0.9",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.3.5",
-    "web-vitals": "^1.1.2"
-  },
+  "main": "build/electron/main.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "concurrently \"npm run react:start\" \"npm run electron:reactdev\" \"npm run electron:watch\"",
+    "react:start": "cross-env BROWSER=none TAILWIND_MODE=watch craco start",
+    "react:build": "craco build",
+    "react:test": "craco test",
+    "react:eject": "react-scripts eject",
+    "electron:build": "tsc --project electron/tsconfig.json",
+    "electron:watch": "wait-on http://localhost:3000 && tsc --watch --project electron/tsconfig.json",
+    "electron:run": "nodemon --watch \"build\" --exec \"electron .\" --inspect=5858",
+    "electron:reactdev": "wait-on http://localhost:3000 && npm run electron:build && cross-env ELECTRON_START_URL=http://localhost:3000 npm run electron:run"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +31,31 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "@craco/craco": "^6.2.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.7.1",
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "typescript": "^4.3.5",
+    "web-vitals": "^1.1.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "concurrently": "^6.2.1",
+    "cross-env": "^7.0.3",
+    "electron": "^13.2.1",
+    "nodemon": "^2.0.12",
+    "postcss": "^7.0.36",
+    "postcss-nested": "^4.2.3",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7",
+    "wait-on": "^6.0.0"
   }
 }
