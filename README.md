@@ -25,8 +25,8 @@ Any bugs and new ideas are welcome on [Issues](https://github.com/AssisrMatheus/
 - Run `npm start`
 
 - Additional commands:
-  - `npm start start-display`: Display the text for every keypress on the command line window.
-  - `npm start start-debug`: Display the actual keypress event for every keypress on the command line window.
+  - `npm start start-no-display`: Does not display the text for every keypress in the command line window.
+  - `npm start start-debug`: Display the actual keypress event for every keypress in the command line window.
 
 ## How to use in [OBS (Open Broadcaster Software)](https://obsproject.com/)
 
