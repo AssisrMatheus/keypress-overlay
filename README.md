@@ -1,51 +1,46 @@
-# keypress-overlay
+# Getting Started with Create React App
 
-Display an overlay of your current keypresses
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This is helpful for tutorial videos where you want to display which commands you are using.
+## Available Scripts
 
-![keypress-overlay](https://i.imgur.com/WQdnFNb.gif)
+In the project directory, you can run:
 
-Keypresses will only show if pressing a command(ctrl or shift or alt) or are whitelisted on `keycodes.whitelist.json` files.
+### `npm start`
 
-You can customize how they are shown on `index.html`'s css, and also modify command names on `keycodes.US.json`.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Any bugs and new ideas are welcome on [Issues](https://github.com/AssisrMatheus/keypress-overlay/issues). And you're welcome to send pull-requests.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## How to run the listener server
+### `npm test`
 
-- Download and install [Node](https://nodejs.org/en/download/).
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- Open any terminal(cmd, powershell, bash) window
+### `npm run build`
 
-- Run the `cd` command to go to the project folder containing the files from this repository
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- Run `npm i` and wait
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-- Run `npm start`
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- Additional commands:
-  - `npm start start-display`: Display the text for every keypress on the command line window.
-  - `npm start start-debug`: Display the actual keypress event for every keypress on the command line window.
+### `npm run eject`
 
-## How to use in [OBS (Open Broadcaster Software)](https://obsproject.com/)
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-- Run the listener server.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- Add a browser source
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-- Check the "local file" box
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-- Browse and select the `index.html` file contained on this repository
+## Learn More
 
-- Click "OK"
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-> I also recommend checking "Refresh browser when scene becomes active" and "Shutdown source when not visible" at the bottom.
-
-![obs-tutorial](https://i.imgur.com/RNdIbaK.gif)
-
-## Dependencies
-
-The project uses [iohook](https://wilix-team.github.io/iohook/) and [socket.io](https://socket.io/) and should work with any OS, Mac, Linux or Windows.
-
-[iohook OS Support page](https://wilix-team.github.io/iohook/os-support.html)
+To learn React, check out the [React documentation](https://reactjs.org/).
