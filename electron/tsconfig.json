@@ -4,14 +4,8 @@
     "noImplicitAny": true,
     "sourceMap": true,
     "outDir": "../build/electron",
-    "baseUrl": ".",
-    "moduleResolution": "node"
+    "baseUrl": "."
   },
-  "include": [
-    ".",
-    "../src/types"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": [".", "../src/types"],
+  "exclude": ["node_modules"]
 }

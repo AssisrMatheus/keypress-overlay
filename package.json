@@ -3,8 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "main": "build/electron/main.js",
+  "homepage": ".",
+  "build": {
+    "appId": "com.electron.keypress-overlay",
+    "directories": {
+      "buildResources": "public"
+    }
+  },
   "scripts": {
-    "start": "concurrently \"npm run react:start\" \"npm run electron:reactdev\" \"npm run electron:watch\"",
+    "prestart": "npm run lint",
+    "start": "npm run dev",
+    "dev": "concurrently \"npm run react:start\" \"npm run electron:reactdev\" \"npm run electron:watch\"",
     "react:start": "cross-env BROWSER=none TAILWIND_MODE=watch craco start",
     "react:build": "craco build",
     "react:test": "craco test",
@@ -12,7 +21,17 @@
     "electron:build": "tsc --project electron/tsconfig.json",
     "electron:watch": "wait-on http://localhost:3000 && tsc --watch --project electron/tsconfig.json",
     "electron:run": "nodemon --watch \"build\" --exec \"electron .\" --inspect=5858",
-    "electron:reactdev": "wait-on http://localhost:3000 && npm run electron:build && cross-env ELECTRON_START_URL=http://localhost:3000 npm run electron:run"
+    "preelectron:dist": "npm run electron:build",
+    "electron:dist": "electron-builder build -c.extraMetadata.main=build/electron/main.js",
+    "electron:reactdev": "wait-on http://localhost:3000 && npm run electron:build && cross-env ELECTRON_START_URL=http://localhost:3000 npm run electron:run",
+    "electron:extract": "npx asar extract ./dist/win-unpacked/resources/app.asar dist/asar",
+    "lint:type": "tsc --noEmit && tsc --noEmit --project electron/tsconfig.json",
+    "lint:eslint": "eslint . --ext js --ext jsx --ext ts --ext tsx --fix",
+    "lint:css": "stylelint \"./src/**/*.+(js|jsx|ts|tsx|css|scss)\"",
+    "lint:prettier": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|md|mdx)\"",
+    "lint": "npm run lint:type && npm run lint:eslint && npm run lint:css && npm run lint:prettier",
+    "predist": "npm run lint",
+    "dist": "rimraf ./dist && rimraf ./build && npm run react:build && npm run electron:dist"
   },
   "eslintConfig": {
     "extends": [
@@ -45,17 +64,31 @@
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "typescript": "^4.3.5",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.36",
+    "postcss-nested": "^4.2.3",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7"
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
     "concurrently": "^6.2.1",
     "cross-env": "^7.0.3",
     "electron": "^13.2.1",
+    "electron-builder": "^22.11.7",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "nodemon": "^2.0.12",
-    "postcss": "^7.0.36",
-    "postcss-nested": "^4.2.3",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7",
+    "prettier": "^2.3.2",
+    "rimraf": "^3.0.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recommended": "^5.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
     "wait-on": "^6.0.0"
   }
 }

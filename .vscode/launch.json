@@ -15,10 +15,7 @@
         "TS_NODE_FILES": "true"
       },
       "smartStep": true,
-      "skipFiles": [
-        "<node_internals>/**/*",
-        "${workspaceFolder}/node_modules/**/*"
-      ]
+      "skipFiles": ["<node_internals>/**/*", "${workspaceFolder}/node_modules/**/*"]
     },
     {
       "type": "node",
@@ -29,10 +26,7 @@
       "restart": true,
       "cwd": "${workspaceRoot}",
       "smartStep": true,
-      "skipFiles": [
-        "<node_internals>/**/*.js",
-        "${workspaceFolder}/node_modules/**/*.js"
-      ]
+      "skipFiles": ["<node_internals>/**/*.js", "${workspaceFolder}/node_modules/**/*.js"]
     }
   ]
 }
