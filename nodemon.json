@@ -1,0 +1,8 @@
+{
+  "restartable": "rs",
+  "verbose": true,
+  "exec": "ts-node --files --project tsconfig.json index.ts",
+  "watch": ["./"],
+  "ignore": [".git", "node_modules/**/node_modules", "build"],
+  "ext": "js,json,ts"
+}

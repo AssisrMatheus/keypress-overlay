@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+
+  "compilerOptions": {
+    "lib": ["es2020"],
+    "module": "commonjs",
+    "target": "es2020",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "outDir": "./build",
+    "allowJs": true,
+    "resolveJsonModule": true,
+
+    "sourceRoot": "/",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "rootDir": "./",
+
+    /* ------ Our additional configuration ------ */
+
+    /* Basic Options */
+    "removeComments": false /* Do not emit comments to output. Must be false so jsdocs works */,
+
+    /* Strict Type-Checking Options */
+    "noImplicitReturns": true,
+    "noImplicitAny": true /* Raise error on expressions and declarations with an implied 'any' type. */,
+    "strictNullChecks": true /* Enable strict null checks. */,
+    "strictFunctionTypes": true /* Enable strict checking of function types. */,
+    "strictPropertyInitialization": true /* Enable strict checking of property initialization in classes. */,
+    "noImplicitThis": true /* Raise error on 'this' expressions with an implied 'any' type. */,
+
+    /* Module Resolution Options */
+    "allowSyntheticDefaultImports": true /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */,
+
+    /* Additional Checks */
+    "noUnusedLocals": false /* Report errors on unused locals. */,
+    "noUnusedParameters": false /* Report errors on unused parameters. */,
+    "preserveConstEnums": true,
+    "suppressImplicitAnyIndexErrors": true,
+
+    /* Source Map Options */
+    "sourceMap": true /* Generates corresponding '.map' file. */
+  },
+  "exclude": ["node_modules", "build"],
+  "include": ["./src/**/*"]
+}
