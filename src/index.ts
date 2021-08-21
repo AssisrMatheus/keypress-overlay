@@ -1,6 +1,6 @@
 import { GlobalKeyboardListener } from "node-global-key-listener";
-import whitelist from "./keycodes.whitelist.json";
-import codes from "./keycodes.US.json";
+import whitelist from "../keycodes.whitelist.json";
+import codes from "../keycodes.US.json";
 
 const main = async () => {
   const keyboardListener = new GlobalKeyboardListener();
@@ -26,20 +26,6 @@ const main = async () => {
       (down["LEFT ALT"] || down["RIGHT ALT"]) &&
       e.name !== "LEFT ALT" &&
       e.name !== "RIGHT ALT";
-
-    if (
-      rawValue !== 165 && // Alt gr
-      rawValue !== 17 && // Ctrl
-      rawValue !== 162 && // Ctrl
-      rawValue !== 163 && // Ctrl
-      rawValue !== 16 && // Shift
-      rawValue !== 160 && // Shift
-      rawValue !== 161 && // Shift
-      rawValue !== 18 && // Alt
-      rawValue !== 164 // Alt
-    ) {
-      // console.dir(e);
-    }
 
     if (
       e.state == "DOWN" &&
